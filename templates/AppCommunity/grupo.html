@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'index.html' %}
 
-</body>
-</html>
+{% block title %}
+Grupo
+{% endblock %}
+
+{% block inicio %}
+
+    {% for curso in object_list %}
+        La camada del grupo es {{ grupo.camada }} con el lider {{ grupo.nombre_lider }} {{ grupo.apellido_lider }}
+        <a href="{% url 'AppCommunityEliminarGrupo' grupo.camada %}">-X-</a>
+        <a href="{% url 'AppCommunityEditarGrupo' grupo.camada %}"> Editar</a>
+        <br>
+    {% endfor %}
+
+{% endblock %}
