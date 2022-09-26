@@ -10,13 +10,4 @@ class Integrante(models.Model):
     apellido = models.CharField(max_length=30)
     dni = models.IntegerField(max_length=8)
 
-opciones_contacto = [
-    [0,"Llamame"],
-    [1,"Email"],
-]
 
-class Contacto(models.Model):
-    nombre = models.CharField(max_length=30)
-    email = models.EmailField()
-    telefono = models.CharField(max_length=10)
-    tipo_contacto = models.IntegerField(choices=opciones_contacto)
