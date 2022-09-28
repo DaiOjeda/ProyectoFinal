@@ -8,7 +8,7 @@ def inicio(request):
     contexto = {
         'valor1': "este es un valor"
     }
-    return render(request, 'index.html', contexto)
+    return render(request, 'AppCommunity/index.html', contexto)
 def grupo(request):
     grupos = Grupo.objects.all()
     contexto = {
@@ -34,7 +34,7 @@ def grupo_formulario(request):
             'titulo_form': 'Grupos Formulario',
             'boton_envio': 'Crear'
         }
-        return render(request, 'base_formulario.html', contexto)
+        return render(request, 'base/base_formulario.html', contexto)
 
 def editar_grupo(request, camada):
     grupo_editar = Grupo.objects.get(camada=camada)
@@ -59,7 +59,7 @@ def editar_grupo(request, camada):
                 }
             )
         }
-        return render(request, 'base_formulario.html', contexto)
+        return render(request, 'base/base_formulario.html', contexto)
 
 def eliminar_grupo(request, camada):
     grupo_eliminar = Grupo.objects.get(camada=camada)

@@ -1,7 +1,7 @@
 from django.db import models
 
 class Grupo(models.Model):
-    camada = models.CharField(unique=True)
+    camada = models.CharField(max_length=10, unique=True)
     nombre_lider = models.CharField(max_length=30)
     apellido_lider = models.CharField(max_length=30)
 
