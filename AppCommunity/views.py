@@ -8,7 +8,7 @@ def inicio(request):
     contexto = {
         'valor1': "este es un valor"
     }
-    return render(request, 'AppCommunity/index.html', contexto)
+    return render(request, 'index.html', contexto)
 def grupo(request):
     grupos = Grupo.objects.all()
     contexto = {
@@ -67,3 +67,4 @@ def eliminar_grupo(request, camada):
 
     messages.info(request, f"El {grupo_eliminar} fue eliminado")
     return redirect('AppCommunityGrupo')
+

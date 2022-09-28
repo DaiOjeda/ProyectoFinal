@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include
+from django.conf.urls import handler404
+from
 
 urlpatterns = [
     path('', lambda req: redirect('AppCommunityInicio')),
     path('admin/', admin.site.urls),
-    path('AppCommunity', include('AppCommunity.urls'))
+    path('AppCommunity/', include('AppCommunity.urls'))
 ]
+
+handler404 =

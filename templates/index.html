@@ -20,7 +20,8 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Community Managers</a>
+                <a class="navbar-brand" href="{% url 'AppCommunityInicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'AppCommunityGrupo' %}">Grupo</a>
                 <a class="btn btn-primary" href="#signup">Iniciar sesion</a>
             </div>
         </nav>
@@ -29,7 +30,9 @@
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
-                        <div class="text-center text-white">
+                        <div class="text-center text-black">
+                            <!-- Header - set the background image for the header in the line below-->
+                            <div class="py-5 bg-image-full" style="background-image: url('/static/assets/img/bg-masthead.jpg')">
                             <!-- Page heading-->
                             <h1 class="mb-5">¡Convertimos marcas en referentes de su industria!</h1>
                             <!-- Signup form-->
@@ -40,6 +43,7 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
+                            </div>
                         </div>
                     </div>
                 </div>
