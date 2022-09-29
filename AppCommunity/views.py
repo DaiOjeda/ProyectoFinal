@@ -77,6 +77,9 @@ def eliminar_grupo(request, camada):
 class Error404View(TemplateView):
     template_name = "AppCommunity/error_404.html"
 
+class About(TemplateView):
+    template_name = 'AppCommunity/about.html'
+
 class GrupoList(LoginRequiredMixin, ListView):
     model = Grupo
     template_name='AppCommunity/curso.html'
