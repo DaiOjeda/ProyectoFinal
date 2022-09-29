@@ -1,5 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
+
 from AppCommunity.forms import GrupoFormulario
 from AppCommunity.models import Grupo
 
@@ -68,3 +70,6 @@ def eliminar_grupo(request, camada):
     messages.info(request, f"El {grupo_eliminar} fue eliminado")
     return redirect('AppCommunityGrupo')
 
+#Mejoramos pagina de error
+class Error404View(TemplateView):
+    template_name = "AppCommunity/error_404.html"

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include
 from django.conf.urls import handler404
-from
+from AppCommunity.views import Error404View
 
 urlpatterns = [
     path('', lambda req: redirect('AppCommunityInicio')),
@@ -25,4 +25,4 @@ urlpatterns = [
     path('AppCommunity/', include('AppCommunity.urls'))
 ]
 
-handler404 =
+handler404 = Error404View.as_view()
