@@ -1,10 +1,13 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
 from AppCommunity.forms import GrupoFormulario
 from AppCommunity.models import Grupo
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView
 
 def inicio(request):
     contexto = {
@@ -73,3 +76,7 @@ def eliminar_grupo(request, camada):
 #Mejoramos pagina de error
 class Error404View(TemplateView):
     template_name = "AppCommunity/error_404.html"
+
+class GrupoList(LoginRequiredMixin, ListView):
+    model = Grupo
+    template_name='AppCommunity/curso.html'

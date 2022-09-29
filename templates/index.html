@@ -6,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Convertimos marcas en referentes de su industria</title>
+        <title>
+            {% block title %}
+            Inicio
+            {% endblock %}
+        </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -18,13 +22,15 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-                <a class="navbar-brand" href="{% url 'AppCommunityInicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'AppCommunityGrupo' %}">Grupo</a>
-                <a class="btn btn-primary" href="#signup">Iniciar sesion</a>
-            </div>
-        </nav>
+        {% include 'base/navigation.html' %}
+
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+
+        {% block inicio %}
+            Esta es la pagina de inicio
+        {% endblock %}
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
@@ -151,24 +157,7 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include 'base/footer.html' %}
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
