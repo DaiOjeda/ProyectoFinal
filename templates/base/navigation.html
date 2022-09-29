@@ -3,10 +3,12 @@
                 <a class="navbar-brand" href="{% url 'AppCommunityInicio' %}">Inicio</a>
                 <a class="navbar-brand" href="{% url 'List' %}">Grupos de trabajo</a>
                 {% if user.is_authenticated %}
+                    <img src="{{ user.avatar.imagen.url }}" alt="">
                     <h5>User: {{ user.get_username }}</h5>
-                <a class="btn btn-primary" href="#{% url 'UserCommunityLogout' %}">Logout</a>
+                <a class="btn btn-primary" href="{% url 'UserCommunityLogout' %}">Logout</a>
                 {% else %}
                 <a class="btn btn-primary" href="{% url 'UserCommunityRegister' %}">Registro</a>
                 <a class="btn btn-primary" href="{% url 'UserCoderLogin' %}">Login</a>
+                {% endif %}
             </div>
 </nav>
