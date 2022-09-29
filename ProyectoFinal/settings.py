@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'AppCommunity',
     'UserCommunity',
+    "whitenoise.runserver_nostatic",
 ]
 
 MIDDLEWARE = [
@@ -116,8 +117,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-ROOT_URLCONF = 'AppCommunity.urls'
 
 STATIC_URL = '/static/'
 
