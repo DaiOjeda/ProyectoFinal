@@ -21,6 +21,7 @@ def grupo(request):
     }
     return render(request,'AppCommunity/grupo.html', contexto)
 
+@login_required
 def grupo_formulario(request):
     if request.method == 'POST':
         mi_formulario = GrupoFormulario(request.POST)
@@ -41,6 +42,7 @@ def grupo_formulario(request):
         }
         return render(request, 'base/base_formulario.html', contexto)
 
+@login_required
 def editar_grupo(request, camada):
     grupo_editar = Grupo.objects.get(camada=camada)
 
@@ -66,6 +68,7 @@ def editar_grupo(request, camada):
         }
         return render(request, 'base/base_formulario.html', contexto)
 
+@login_required
 def eliminar_grupo(request, camada):
     grupo_eliminar = Grupo.objects.get(camada=camada)
     grupo_eliminar.delete()

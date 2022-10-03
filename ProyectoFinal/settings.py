@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'AppCommunity',
     'UserCommunity',
-    "whitenoise.runserver_nostatic",
+    #"whitenoise.runserver_nostatic",
 ]
 
 MIDDLEWARE = [
